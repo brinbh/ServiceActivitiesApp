@@ -14,7 +14,7 @@ import { AccountInfoComponent } from './account/account-info/account-info.compon
 import { AccountEditComponent } from './account/account-edit/account-edit.component';
 import { ActivityItemComponent } from './activity/activity-item/activity-item.component';
 import { ActivityListComponent } from './activity/activity-list/activity-list.component';
-import {AppRoutingModule} from "./app-routing.module";
+import {AppRoutingModule} from "./app-routing";
 import { DocumentItemComponent } from './documents/document-item/document-item.component';
 import { DocumentListComponent } from './documents/document-list/document-list.component';
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
@@ -39,6 +39,8 @@ import { FormListComponent } from './forms/form-list/form-list.component';
 import { RuleDetailComponent } from './rules/rule-detail/rule-detail.component';
 import { RuleItemComponent } from './rules/rule-item/rule-item.component';
 import { RuleListComponent } from './rules/rule-list/rule-list.component';
+import {FormsModule} from "@angular/forms";
+import { StartUpComponent } from './start-up/start-up.component';
 
 
 @NgModule({
@@ -78,11 +80,13 @@ import { RuleListComponent } from './rules/rule-list/rule-list.component';
     FormListComponent,
     RuleDetailComponent,
     RuleItemComponent,
-    RuleListComponent
+    RuleListComponent,
+    StartUpComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
 
   ],
   providers: [],
