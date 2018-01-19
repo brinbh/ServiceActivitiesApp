@@ -41,6 +41,8 @@ import { RuleItemComponent } from './rules/rule-item/rule-item.component';
 import { RuleListComponent } from './rules/rule-list/rule-list.component';
 import {FormsModule} from "@angular/forms";
 import { StartUpComponent } from './start-up/start-up.component';
+import {ServerService} from "./server.service";
+import {HttpModule} from "@angular/http";
 
 
 @NgModule({
@@ -86,10 +88,11 @@ import { StartUpComponent } from './start-up/start-up.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule
 
   ],
-  providers: [],
+  providers: [ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
