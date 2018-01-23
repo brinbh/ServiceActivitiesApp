@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class ContactsServiceService {
+export class ContactsService {
+  contacts: Contact[]=[];
 
   constructor() { }
 

@@ -9,7 +9,7 @@ import {RulesComponent} from "./rules/rules.component";
 
 
 const appRoutes: Routes = [
-  { path: "", redirectTo: "/start-up", pathMatch: "full"},
+  { path: "", redirectTo: "start-up", pathMatch: "full"},
   { path: "account/:id", component: AccountComponent},
   { path: "activity/:program", component: ActivityComponent, children: [
     { path: "contacts", component: AccountComponent},
