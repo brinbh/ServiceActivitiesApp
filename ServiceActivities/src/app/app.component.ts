@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ServerService} from "./server.service";
 
 @Component({
   selector: 'app-root',
@@ -24,19 +23,11 @@ export class AppComponent {
       phone: '444-444-4444'
     }
   ];
-  constructor(private serverService: ServerService){
-
+  constructor() {
   }
 
-  onNavigate(feature: string){
+  onNavigate(feature: string) {
     this.loadedFeature = feature;
-  }
-  onSave(){
-    this.serverService.storeServers(this.contacts)
-      .subscribe(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      );
   }
 
 }

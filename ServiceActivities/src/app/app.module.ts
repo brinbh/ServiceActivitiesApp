@@ -14,7 +14,7 @@ import { AccountInfoComponent } from './account/account-info/account-info.compon
 import { AccountEditComponent } from './account/account-edit/account-edit.component';
 import { ActivityItemComponent } from './activity/activity-item/activity-item.component';
 import { ActivityListComponent } from './activity/activity-list/activity-list.component';
-import {AppRoutingModule} from "./app-routing";
+import { AppRoutingModule } from './app-routing';
 import { DocumentItemComponent } from './documents/document-item/document-item.component';
 import { DocumentListComponent } from './documents/document-list/document-list.component';
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
@@ -39,10 +39,12 @@ import { FormListComponent } from './forms/form-list/form-list.component';
 import { RuleDetailComponent } from './rules/rule-detail/rule-detail.component';
 import { RuleItemComponent } from './rules/rule-item/rule-item.component';
 import { RuleListComponent } from './rules/rule-list/rule-list.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { StartUpComponent } from './start-up/start-up.component';
-import {ServerService} from "./server.service";
-import {HttpModule} from "@angular/http";
+import { HttpClientModule } from '@angular/common/http';
+import { ContactsService } from './contacts/contacts-service';
+import { ContactFilterPipe } from './contacts/contact-filter.pipe';
+import {HttpModule} from '@angular/http';
 
 
 @NgModule({
@@ -68,6 +70,7 @@ import {HttpModule} from "@angular/http";
     ContactListComponent,
     ContactEditComponent,
     ContactAddComponent,
+    ContactFilterPipe,
     EventDetailComponent,
     EventItemComponent,
     EventListComponent,
@@ -92,7 +95,7 @@ import {HttpModule} from "@angular/http";
     HttpModule
 
   ],
-  providers: [ServerService],
+  providers: [ContactsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
