@@ -89,6 +89,7 @@ export class ContactsService {
     this.http.get(this.firebaseRoot + '/contacts.json')
       .map((response: Response) => {
           this.contacts = response.json();
+          console.log(this.contacts);
           return this.contacts;
         }
       ).subscribe((contacts: Contact[]) => {

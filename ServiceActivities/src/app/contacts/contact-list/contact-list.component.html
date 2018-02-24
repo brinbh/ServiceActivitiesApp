@@ -7,8 +7,11 @@
        <!--placeholder = "Enter search value">-->
 <p>Contact List</p>
 <app-contact-item
-  *ngFor="let contactEl of contacts; let i = index"
+  ng-repeat="(key, value) in contacts; let i = index"
   [contact]="contactEl"
   [index]="i">
   <p>testing</p>
 </app-contact-item>
+
+
+<!--*ngFor="let contactEl of contacts; let i = index"-->

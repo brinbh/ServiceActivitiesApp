@@ -20,7 +20,13 @@ export class ContactListComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.contactService.getContacts();
+    const contacts = this.contactService.getContacts();
+    this.contacts = [];
+    for (const contact in contacts) {
+      if (this.contacts.hasOwnProperty(contact)) {
+        this.contacts.push(contact);
+      }
+      }
     this.contactService.contactChangedEvent
       .subscribe(
         (contacts: Contact[]) => {
