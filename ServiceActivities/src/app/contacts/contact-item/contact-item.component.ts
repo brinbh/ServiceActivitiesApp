@@ -13,6 +13,8 @@ export class ContactItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    debugger
+    console.log(this.contact.fname);
   }
 
 }

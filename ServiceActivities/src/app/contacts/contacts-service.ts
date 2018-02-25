@@ -74,12 +74,16 @@ export class ContactsService {
   */
   getMaxId() {
     this.maxContactId = 0;
-    for (const contact of this.contacts){
-      this.currentId = parseInt(contact.id, 1);
-      if (this.currentId > this.maxContactId) {
-        this.maxContactId = this.currentId;
-      }
-    }
+    // if (this.contacts) {
+    //   for (const contact in this.contacts) {
+    //      if ( contact.id) {
+    //        this.currentId = parseInt(contact.id, 1);
+    //        if (this.currentId > this.maxContactId) {
+    //          this.maxContactId = this.currentId;
+    //        }
+    //      }
+    //   }
+    // }
     return this.maxContactId;
   }
   /*
@@ -89,7 +93,11 @@ export class ContactsService {
     this.http.get(this.firebaseRoot + '/contacts.json')
       .map((response: Response) => {
           this.contacts = response.json();
-          console.log(this.contacts);
+          for (const contact in this.contacts) {
+            if (this.contacts[contact]) {
+              console.log(this.contacts[contact]);
+            }
+          }
           return this.contacts;
         }
       ).subscribe((contacts: Contact[]) => {
