@@ -1,11 +1,8 @@
-<p>--Contact Item</p>
-<div  class="contact">
-<a
-  [routerLink] ="[index]"
-  class="list-item clearfix">
-  <div class="pull-left">
-    <p class="list-item-heading">contact: {{this.contact.fname}}</p>
-    <p class="list-item-detail">job</p>
+<div class="contact">
+<a [routerLink]="[index]" class="list-item clearfix" >
+  <div>
+    <p *ngIf="contact" class="list-item-heading">
+      <span class="name">{{contact.fname}} {{contact.lname}}</span> - {{contact.phone}}</p>
   </div>
 </a>
 </div>

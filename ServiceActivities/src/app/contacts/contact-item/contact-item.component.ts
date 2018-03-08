@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {ContactsService} from '../contacts-service';
+import {ContactsService} from '../contacts.service';
 import {Contact} from '../contact.module';
 
 @Component({
@@ -10,11 +10,12 @@ import {Contact} from '../contact.module';
 export class ContactItemComponent implements OnInit {
   @Input() contact: Contact;
   @Input() index: number;
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
-    debugger
-    console.log(this.contact.fname);
   }
+
+
 
 }

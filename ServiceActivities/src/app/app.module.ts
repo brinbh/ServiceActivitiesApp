@@ -42,7 +42,7 @@ import { RuleListComponent } from './rules/rule-list/rule-list.component';
 import { FormsModule } from '@angular/forms';
 import { StartUpComponent } from './start-up/start-up.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ContactsService } from './contacts/contacts-service';
+import { ContactsService } from './contacts/contacts.service';
 import { ContactFilterPipe } from './contacts/contact-filter.pipe';
 import {HttpModule} from '@angular/http';
 

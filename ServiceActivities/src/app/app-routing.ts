@@ -7,13 +7,19 @@ import {EventsComponent} from './events/events.component';
 import {FormsComponent} from './forms/forms.component';
 import {RulesComponent} from './rules/rules.component';
 import {ContactsComponent} from './contacts/contacts.component';
+import {ContactEditComponent} from './contacts/contact-edit/contact-edit.component';
+import {ContactDetailComponent} from './contacts/contact-detail/contact-detail.component';
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'start-up', pathMatch: 'full'},
   { path: 'account/:id', component: AccountComponent},
   { path: 'activity', component: ActivityComponent, children: [
-    { path: 'contacts', component: ContactsComponent},
+      { path: 'contacts', component: ContactsComponent, children: [
+          {path: 'new', component: ContactEditComponent},
+          {path: ':id', component: ContactDetailComponent},
+          {path: ':id/edit', component: ContactEditComponent}
+        ] },
     { path: 'documents', component: DocumentsComponent},
     { path: 'events', component: EventsComponent},
     { path: 'forms', component: FormsComponent},
