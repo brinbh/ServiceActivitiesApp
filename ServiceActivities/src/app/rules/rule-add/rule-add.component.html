@@ -1,0 +1,32 @@
+<div class="row">
+  <form class="normal-form" id="contact-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="f-group">
+      <p><label for="title">Title</label></p>
+      <input
+        type="text"
+        id="title"
+        class="form-control required"
+        max="120"
+        ngModel
+        name="title"
+        required
+        #name="ngModel">
+    </div>
+    <div class="f-group">
+      <p><label for="content">Content</label></p>
+      <input
+        type="textarea"
+        id="content"
+        class="form-control required"
+        ngModel
+        name="content"
+        required
+        #name="ngModel">
+    </div>
+
+    <div class="f-group">
+      <button class="button" type="submit" [disabled]="!f.valid">Add</button>
+      <button class="button" type="button" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

@@ -1,1 +1,135 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800');
+/*Open Sans Numbers: Light - 300; Regular: 400; Bold: 700; Extra-Bold: 800;*/
+
+/*RESET*/
+*{
+  margin: 0;
+  padding: 0;
+}
+/*TYPOGRAPHY*/
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  color: #333333;
+}
+h1 {
+  font-weight: 300;
+  padding-top: 2rem;
+}
+h2 {
+  font-weight: 700;
+  padding-top: 1.75rem;
+}
+h3 {
+  font-weight: 300;
+}
+p{
+  padding-top: 1rem;
+  font-size: .9rem;
+}
+p.small {
+  text-transform: uppercase;
+  font-size: .7rem;
+  padding-top: 0;
+}
+.title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  /*position: fixed;*/
+  background-color: #ffffff;
+}
+
+/*COLOR*/
+
+
+/*LAYOUT*/
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.list {
+  flex-grow: 1;
+  max-width: 25%;
+  -webkit-box-shadow: 2px 0px 3px -2px #333;
+  -moz-box-shadow: 2px 0px 3px -2px #333;
+  box-shadow: 2px 0px 3px -2px #333;
+  padding: 0px 0px 100% 20px;
+  overflow: scroll;
+  max-height: 600px;
+}
+.list-item {
+  padding: 10px 5px;
+}
+.list-item:hover {
+  background-color: #f0f0f0;
+}
+.list-item-active, .list-item-active:hover {
+  background-color: #e3e3e3;
+}
+
+.detail {
+  flex-grow: 3;
+  padding-left: 20px;
+  max-width: 50%;
+}
+
+/*FORMS*/
+
+.normal-form {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: #f9f9f9;
+  padding: 0 30px 0 30px;
+  margin-left: -20px;
+  width: 100%;
+  padding-bottom: 100%;
+}
+.f-group {
+  padding: 10px 0px;
+}
+.f-group input {
+  height: 30px;
+  border: none;
+  background-color: #fff;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  width: 100%;
+  padding-left: 10px;
+
+}
+
+/*BUTTONS*/
+.button {
+  padding: 10px;
+  background-color: #515151;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #333;
+}
+.button-add {
+  border: none;
+  padding: 0;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+.minor-active, .button-add:hover {
+  background-color: #f0f0f0;
+}
+
+
+

@@ -1,3 +1,7 @@
-<p>
-  rule-item works!
-</p>
+<div class="contact">
+  <a [routerLink]="rule.id" >
+    <div>
+      <p *ngIf="rule" class="list-item rule">{{rule.title}}</p>
+    </div>
+  </a>
+</div>

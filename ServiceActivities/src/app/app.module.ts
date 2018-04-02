@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FormsComponent } from './forms/forms.component';
@@ -14,7 +13,7 @@ import { AccountInfoComponent } from './account/account-info/account-info.compon
 import { AccountEditComponent } from './account/account-edit/account-edit.component';
 import { ActivityItemComponent } from './activity/activity-item/activity-item.component';
 import { ActivityListComponent } from './activity/activity-list/activity-list.component';
-import {AppRoutingModule} from "./app-routing";
+import { AppRoutingModule } from './app-routing.module';
 import { DocumentItemComponent } from './documents/document-item/document-item.component';
 import { DocumentListComponent } from './documents/document-list/document-list.component';
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
@@ -39,9 +38,13 @@ import { FormListComponent } from './forms/form-list/form-list.component';
 import { RuleDetailComponent } from './rules/rule-detail/rule-detail.component';
 import { RuleItemComponent } from './rules/rule-item/rule-item.component';
 import { RuleListComponent } from './rules/rule-list/rule-list.component';
-import {FormsModule} from "@angular/forms";
-import { StartUpComponent } from './start-up/start-up.component';
-
+import { FormsModule } from '@angular/forms';
+import { StartComponent } from './start/start.component';
+import { ContactsService } from './contacts/contacts.service';
+import { ContactFilterPipe } from './contacts/contact-filter.pipe';
+import {HttpModule} from '@angular/http';
+import {RulesService} from './rules/rules.service';
+import {RuleAddComponent} from './rules/rule-add/rule-add.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +69,7 @@ import { StartUpComponent } from './start-up/start-up.component';
     ContactListComponent,
     ContactEditComponent,
     ContactAddComponent,
+    ContactFilterPipe,
     EventDetailComponent,
     EventItemComponent,
     EventListComponent,
@@ -81,15 +85,17 @@ import { StartUpComponent } from './start-up/start-up.component';
     RuleDetailComponent,
     RuleItemComponent,
     RuleListComponent,
-    StartUpComponent
+    RuleAddComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule
 
   ],
-  providers: [],
+  providers: [ContactsService, RulesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

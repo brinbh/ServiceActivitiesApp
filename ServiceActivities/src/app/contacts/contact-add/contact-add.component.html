@@ -1,3 +1,87 @@
-<p>
-  contact-add works!
-</p>
+<div class="row">
+  <form class="normal-form" id="contact-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="f-group">
+        <p><label for="fname">First Name</label></p>
+        <input
+          type="text"
+          id="fname"
+          class="form-control required"
+          max="120"
+          ngModel
+          name="fname"
+          required
+          #name="ngModel">
+      </div>
+      <div class="f-group">
+        <p><label for="lname">Last Name</label></p>
+        <input
+          type="text"
+          id="lname"
+          class="form-control required"
+          max="120"
+          ngModel
+          name="lname"
+          required
+          #name="ngModel">
+      </div>
+
+      <div class="f-group">
+        <p><label for="job">Job</label></p>
+        <input
+        type="text"
+        id="job"
+        class="form-control required"
+        max="120"
+        ngModel
+        name="job"
+        required
+        #name="ngModel">
+    </div>
+
+      <div class="f-group">
+        <p><label for="email">Email</label></p>
+        <input
+          type="text"
+          id="email"
+          class="form-control required"
+          max="255"
+          ngModel
+          name="email"
+          required
+          email
+          #email="ngModel">
+      </div>
+      <div class="help-block" *ngIf="!email.valid && email.dirty">Enter a valid Email Address</div>
+      <div class="f-group">
+        <p><label for="phone">Phone</label></p>
+        <input
+          type="text"
+          id="phone"
+          class="form-control invalid"
+          max="255"
+          ngModel
+          name="phone"
+          required
+          #phone="ngModel"
+          pattern="\D*([2-9]\d{2})(\D*)([2-9]\d{2})(\D*)(\d{4})\D*">
+
+      </div>
+      <div class="help-block" *ngIf="!phone.valid && phone.dirty">Enter a valid Phone Number</div>
+      <div class="f-group">
+        <p><label for="imageUrl">Url for your Profile Image</label></p>
+        <input
+          type="text"
+          id="imageUrl"
+          class="form-control"
+          max="255"
+          ngModel
+          name="url"
+          #url="ngModel">
+      </div>
+
+      <div class="f-group">
+        <button class="button" type="submit" [disabled]="!f.valid">Add</button>
+        <button class="button" type="button" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+ </div>

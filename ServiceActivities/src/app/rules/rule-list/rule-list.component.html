@@ -1,3 +1,5 @@
-<p>
-  rule-list works!
-</p>
+<app-rule-item
+  *ngFor="let ruleEl of rules; let i = index"
+  [rule]="ruleEl"
+  [index]="i">
+</app-rule-item>

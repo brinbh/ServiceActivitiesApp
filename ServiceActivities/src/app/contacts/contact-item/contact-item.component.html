@@ -1,3 +1,8 @@
-<p>
-  contact-item works!
-</p>
+<div class="contact">
+<a [routerLink]="contact.id" >
+  <div>
+    <p *ngIf="contact" class="list-item">
+      <span class="name">{{contact.fname}} {{contact.lname}}</span> - {{contact.job}}</p>
+  </div>
+</a>
+</div>

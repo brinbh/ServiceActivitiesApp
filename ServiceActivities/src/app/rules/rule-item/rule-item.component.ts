@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Rule} from '../rules.model';
 
 @Component({
   selector: 'app-rule-item',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rule-item.component.css']
 })
 export class RuleItemComponent implements OnInit {
-
+  @Input() rule: Rule;
+  @Input() index: number;
   constructor() { }
 
   ngOnInit() {

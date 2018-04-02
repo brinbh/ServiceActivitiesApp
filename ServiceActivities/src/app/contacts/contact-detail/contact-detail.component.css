@@ -1,0 +1,16 @@
+.contact-img {
+  width: 150px;
+}
+.contact-img-container {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.75rem;
+}
+.delete {
+  padding: 20px;
+}
