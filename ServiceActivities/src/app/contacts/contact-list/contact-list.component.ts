@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ContactsService} from '../contacts.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Contact} from '../contact.module';
+import {Contact} from '../contact.model';
 import {Subscription} from 'rxjs/Subscription';
 import 'rxjs/add/operator/map';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-contact-list',
@@ -15,7 +16,8 @@ export class ContactListComponent implements OnInit {
   term = '';
   private contactsUpdatedSubscription: Subscription;
 
-  constructor(private contactsService: ContactsService) {
+  constructor(private contactsService: ContactsService,
+              private router: Router) {
     this.contactsUpdatedSubscription = contactsService.contactsUpdated
       .subscribe((contacts: Array<Contact>) => {
         this.contacts = contacts;
@@ -25,11 +27,8 @@ export class ContactListComponent implements OnInit {
   ngOnInit() {
     this.contactsService.initContacts()
       .subscribe((contacts: Contact[]) => {
-        this.contacts = contacts;
+        this.contacts = Object.values(contacts);
       });
-    this.contactsService.initContacts().subscribe((contacts: Contact[]) => {
-      this.contacts = contacts;
-    });
   }
 
   /*

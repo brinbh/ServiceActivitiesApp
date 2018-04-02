@@ -1,6 +1,13 @@
 <div class="row">
-  <h1>Service Activity Contacts</h1>
-  <router-outlet></router-outlet>
-  <app-contact-list></app-contact-list>
-  <app-contact-detail></app-contact-detail>
+  <div class="list">
+    <div class="title">
+      <h3>Service Activity Contact List </h3>
+      <button class="button-add" (click)="onAddContact()">+</button>
+    </div>
+    <app-contact-list></app-contact-list>
+  </div>
+  <div class="detail">
+    <router-outlet></router-outlet>
+    <h3>{{message}}</h3>
+  </div>
 </div>

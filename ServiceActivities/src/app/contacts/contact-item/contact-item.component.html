@@ -1,8 +1,8 @@
 <div class="contact">
-<a [routerLink]="[index]" class="list-item clearfix" >
+<a [routerLink]="contact.id" >
   <div>
-    <p *ngIf="contact" class="list-item-heading">
-      <span class="name">{{contact.fname}} {{contact.lname}}</span> - {{contact.phone}}</p>
+    <p *ngIf="contact" class="list-item">
+      <span class="name">{{contact.fname}} {{contact.lname}}</span> - {{contact.job}}</p>
   </div>
 </a>
 </div>

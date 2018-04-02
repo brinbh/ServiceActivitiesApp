@@ -1,3 +1,7 @@
-<p>
-  rule-detail works!
-</p>
+<div *ngIf="rule">
+  <h2>{{rule.title}}</h2>
+  <p>{{rule.content}}</p>
+</div>
+<div class="delete">
+  <!--<button class="button" (click)="onDeleteRule()">Delete</button>-->
+</div>

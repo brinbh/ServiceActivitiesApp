@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import {Contact} from '../contact.module';
+import {Contact} from '../contact.model';
 import {ContactsService} from '../contacts.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 
@@ -16,16 +16,17 @@ export class ContactDetailComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    // this.contact.id = {id: this.route.snapshot.params['id']};
     this.route.params.subscribe(
       (params: Params) => {
         this.id = +params['id'];
         this.contact = this.contactService.getContactById(this.id);
       }
     );
-    this.contactService.contactSelectedEvent.subscribe(
-      (contact: Contact) => {this.contact = contact});
+    // this.contactService.contactSelectedEvent.subscribe(
+    //   (contact: Contact) => {this.contact = contact; });
   }
-  onEditContact(){
+  onEditContact() {
     this.router.navigate(['edit'], {relativeTo: this.route});
 
   }
