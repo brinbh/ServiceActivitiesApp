@@ -17,10 +17,7 @@ export class ContactsComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    // this.contactService.contactSelectedEvent
-    //   .subscribe(
-    //     (contact: Contact) => {
-    //       this.selectedContact = contact; });
+    this.router.navigate(['contacts', 'list']);
   }
   onAddContact() {
     this.router.navigate(['contacts', 'new']);

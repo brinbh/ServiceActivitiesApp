@@ -23,8 +23,6 @@ export class ContactDetailComponent implements OnInit {
         this.contact = this.contactService.getContactById(this.id);
       }
     );
-    // this.contactService.contactSelectedEvent.subscribe(
-    //   (contact: Contact) => {this.contact = contact; });
   }
   onEditContact() {
     this.router.navigate(['edit'], {relativeTo: this.route});

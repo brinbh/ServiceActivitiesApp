@@ -17,10 +17,7 @@ export class RulesComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    // this.rulesService.ruleSelectedEvent
-    //   .subscribe(
-    //     (rule: Rule) => {
-    //       this.selectedRule = Rule; });
+    this.router.navigate(['rules', 'list']);
   }
   onAddRule() {
     this.router.navigate(['rules', 'new']);

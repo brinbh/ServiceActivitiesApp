@@ -1,0 +1,37 @@
+/* DESKTOP LAYOUT */
+
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  height: 100%;
+}
+
+.main-menu {
+  flex-grow: 1;
+  padding-bottom: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  min-width: 290px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.main-content {
+  flex-grow: 3;
+  height: 100%;
+}
+
+.menu-item {
+  padding: 20px 6px;
+  text-align: center;
+}
+.menu-item:hover {
+  background-color: #f0f0f0;
+}
+.active, .active:hover {
+  background-color: #e3e3e3;
+}
+.activity-list {
+  width: 100%;
+}

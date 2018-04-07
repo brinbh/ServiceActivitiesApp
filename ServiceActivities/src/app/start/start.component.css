@@ -1,0 +1,28 @@
+.logo {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.spinner {
+  margin-top: 20px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 8px solid #f9f9f9;
+  border-top: 8px solid #0076C6;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

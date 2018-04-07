@@ -6,7 +6,7 @@ import {Http, Response} from '@angular/http';
 
 @Injectable()
 export class ContactsService {
-  firebaseRoot= 'https://service-activities-app.firebaseio.com/AdoptaGrandparent';
+  firebaseRoot= 'https://service-activities-app.firebaseio.com/activities/AdoptaGrandparent';
   // contactSelectedEvent = new Subject<Contact>();
   contactChangedEvent = new Subject<Contact[]>();
   contactsUpdated = new Subject<Contact[]>();

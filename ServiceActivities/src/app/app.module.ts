@@ -45,6 +45,9 @@ import { ContactFilterPipe } from './contacts/contact-filter.pipe';
 import {HttpModule} from '@angular/http';
 import {RulesService} from './rules/rules.service';
 import {RuleAddComponent} from './rules/rule-add/rule-add.component';
+import {ActivityService} from './activity/activity.service';
+import { ActivityMenuComponent } from './activity/activity-menu/activity-menu.component';
+import {AppService} from './app.service';
 
 @NgModule({
   declarations: [
@@ -86,7 +89,8 @@ import {RuleAddComponent} from './rules/rule-add/rule-add.component';
     RuleItemComponent,
     RuleListComponent,
     RuleAddComponent,
-    StartComponent
+    StartComponent,
+    ActivityMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -95,7 +99,7 @@ import {RuleAddComponent} from './rules/rule-add/rule-add.component';
     HttpModule
 
   ],
-  providers: [ContactsService, RulesService],
+  providers: [AppService, ContactsService, RulesService, ActivityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

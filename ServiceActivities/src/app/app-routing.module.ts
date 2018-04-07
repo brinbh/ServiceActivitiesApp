@@ -13,22 +13,33 @@ import {StartComponent} from './start/start.component';
 import {ContactAddComponent} from './contacts/contact-add/contact-add.component';
 import {RuleDetailComponent} from './rules/rule-detail/rule-detail.component';
 import {RuleAddComponent} from './rules/rule-add/rule-add.component';
+import {AppComponent} from './app.component';
+import {ContactListComponent} from './contacts/contact-list/contact-list.component';
+import {ActivityMenuComponent} from './activity/activity-menu/activity-menu.component';
+import {RuleListComponent} from './rules/rule-list/rule-list.component';
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'StartComponent', pathMatch: 'full'},
-  { path: 'account', component: AccountComponent},
+  { path: '', component: StartComponent},
+  { path: 'activity', component: ActivityMenuComponent, children: [
+      { path: ':id', component: ActivityMenuComponent}
+    ]},
+  { path: 'account', component: AccountComponent, children: [
+      { path: ':id', component: ActivityMenuComponent}
+    ]},
   { path: 'contacts', component: ContactsComponent, children: [
+    { path: 'list', component: ContactListComponent},
     { path: 'new', component: ContactAddComponent},
-    { path: ':id', component: ContactDetailComponent},
-    { path: ':id/edit', component: ContactEditComponent}
+    { path: 'list/:id', component: ContactDetailComponent},
+    { path: 'list/:id/edit', component: ContactEditComponent}
   ] },
   { path: 'documents', component: DocumentsComponent},
   { path: 'events', component: EventsComponent},
   { path: 'forms', component: FormsComponent},
   { path: 'rules', component: RulesComponent, children: [
+      { path: 'list', component: RuleListComponent},
       { path: 'new', component: RuleAddComponent},
-    { path: ':id', component: RuleDetailComponent}
+    { path: 'list/:id', component: RuleDetailComponent}
     ]
   }
   ]
