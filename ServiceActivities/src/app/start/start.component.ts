@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-start-up',
@@ -8,11 +8,12 @@ import {Router} from '@angular/router';
 })
 export class StartComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     setTimeout(() => {
-      this.router.navigate(['account']);
+      this.router.navigate(['account'], {relativeTo: this.route});
     }, 2000);
   }
 

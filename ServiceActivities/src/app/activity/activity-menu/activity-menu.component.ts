@@ -19,15 +19,13 @@ export class ActivityMenuComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       (params: Params) => {
-        this.id = params.key['id'];
+        this.id = params.key['activityId'];
         this.activity = this.activityService.getActivityById(this.id);
       }
     );
-    // this.id = +window.location.pathname.split('/')[2];
     this.appService.currentActivity.subscribe(
       (id: number) => {
         this.id = id;
-        console.log('setting id to: ' + id);
       }
     );
     this.activity = this.activityService.getActivityById(this.id);

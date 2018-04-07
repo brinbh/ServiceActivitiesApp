@@ -11,7 +11,6 @@ import {AppService} from '../../app.service';
 export class ActivityItemComponent implements OnInit {
   @Input() activity: Activity;
   @Input() index: number;
-  // selectedActivity: number;
   constructor(private router: Router,
               private route: ActivatedRoute,
               private appService: AppService) { }
@@ -19,9 +18,9 @@ export class ActivityItemComponent implements OnInit {
   ngOnInit() {
   }
   goToActivity(id) {
-    // this.selectedActivity = id;
-    this.appService.currentActivity.next(id);
-    this.router.navigate(['../activity/', id], {relativeTo: this.route});
+    this.appService.currentActivity.next(this.activity);
+    this.router.navigate([id], {relativeTo: this.route});
+    debugger
   }
 
 }

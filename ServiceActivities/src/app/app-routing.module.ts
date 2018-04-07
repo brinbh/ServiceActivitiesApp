@@ -21,11 +21,8 @@ import {RuleListComponent} from './rules/rule-list/rule-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: StartComponent},
-  { path: 'activity', component: ActivityMenuComponent, children: [
-      { path: ':id', component: ActivityMenuComponent}
-    ]},
   { path: 'account', component: AccountComponent, children: [
-      { path: ':id', component: ActivityMenuComponent}
+      { path: ':activityId', component: ActivityMenuComponent}
     ]},
   { path: 'contacts', component: ContactsComponent, children: [
     { path: 'list', component: ContactListComponent},

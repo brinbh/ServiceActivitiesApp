@@ -3,17 +3,24 @@ import {Contact} from './contact.model';
 import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
 import {Http, Response} from '@angular/http';
+import {AppService} from '../app.service';
+import {Activity} from '../activity/activity.model';
 
 @Injectable()
 export class ContactsService {
-  firebaseRoot= 'https://service-activities-app.firebaseio.com/activities/AdoptaGrandparent';
-  // contactSelectedEvent = new Subject<Contact>();
+  firebaseRoot= 'https://service-activities-app.firebaseio.com/activities/';
+  activity: String;
   contactChangedEvent = new Subject<Contact[]>();
   contactsUpdated = new Subject<Contact[]>();
   private contacts: Contact[];
   maxContactId: number;
   currentId: number;
-  constructor(private http: Http) {
+  constructor(private http: Http, private appService: AppService) {
+    this.appService.currentActivity.subscribe(
+      (activity: Activity ) => {
+        this.activity = activity.name;
+        debugger
+      });
     this.initContacts()
       .subscribe((contacts: Contact[]) => {
         this.contacts = contacts;
@@ -69,7 +76,7 @@ export class ContactsService {
   /* Add contact with HTTP request */
   onAdd(contact: Contact) {
     // this.contactChangedEvent.next(this.contacts);
-    return this.http.post(this.firebaseRoot + '/contacts.json', contact);
+    return this.http.post(this.firebaseRoot + this.activity + '/contacts.json', contact);
   }
   /*
   * Get maximum id of contacts
@@ -88,7 +95,7 @@ export class ContactsService {
   }
 
   initContacts() {
-    const contacts = this.http.get(this.firebaseRoot + '/contacts.json')
+    const contacts = this.http.get(this.firebaseRoot + this.activity + '/contacts.json')
       .map((response: Response) => response.json())
     return contacts;
   }
@@ -96,7 +103,7 @@ export class ContactsService {
   * Call HTTP method to post contacts into firebase
   */
   saveContacts(contacts: Contact[]) {
-    return this.http.put(this.firebaseRoot + '/contacts.json', contacts)
+    return this.http.put(this.firebaseRoot + this.activity + '/contacts.json', contacts)
       .subscribe((response: Response) => {
         this.contacts = contacts;
         this.contactChangedEvent.next(this.contacts);
