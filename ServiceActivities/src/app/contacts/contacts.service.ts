@@ -19,7 +19,6 @@ export class ContactsService {
     this.appService.currentActivity.subscribe(
       (activity: Activity ) => {
         this.activity = activity.name;
-        debugger
       });
     this.initContacts()
       .subscribe((contacts: Contact[]) => {

@@ -31,7 +31,6 @@ export class ActivityItemComponent implements OnInit {
       }
     );
     this.router.navigate(['../activity', id], {relativeTo: this.route});
-    debugger
   }
 
 }
