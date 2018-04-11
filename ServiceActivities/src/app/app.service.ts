@@ -3,6 +3,6 @@ import {Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class AppService {
-  currentActivity = new Subject;
+  currentActivity = new Subject();
   constructor() {}
 }

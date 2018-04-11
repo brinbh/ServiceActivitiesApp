@@ -11,23 +11,23 @@ import {AppService} from '../../app.service';
 })
 export class ActivityMenuComponent implements OnInit {
   activity: Activity;
-  id: number;
   constructor(private activityService: ActivityService,
               private route: ActivatedRoute,
               private appService: AppService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(
-      (params: Params) => {
-        this.id = params.key['activityId'];
-        this.activity = this.activityService.getActivityById(this.id);
-      }
-    );
+    // this.route.params.subscribe(
+    //   (params: Params) => {
+    //     this.id = params.key['activityId'];
+    //     this.activity = this.activityService.getActivityById(this.id);
+    //   }
+    // );
     this.appService.currentActivity.subscribe(
-      (id: number) => {
-        this.id = id;
+      (activity: Activity) => {
+        this.activity = activity;
+        console.log('Next: ' + activity);
       }
     );
-    this.activity = this.activityService.getActivityById(this.id);
+    debugger
   }
 }
