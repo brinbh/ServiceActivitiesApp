@@ -30,7 +30,7 @@ export class ContactAddComponent implements OnInit {
         (res) => console.log(res),
       (err) => console.log(err));
     this.contactsService.contactChangedEvent.next(this.contacts);
-    this.router.navigate(['/contacts'], {relativeTo: this.route});
+    this.router.navigate(['/contacts/list'], {relativeTo: this.route});
     this.contactsService.initContacts();
   }
   onCancel() {

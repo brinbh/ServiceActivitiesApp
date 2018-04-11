@@ -1,34 +1,3 @@
-/* DESKTOP LAYOUT */
-
-.main {
-  display: flex;
-  flex-flow: row nowrap;
-  height: 100%;
-}
-
-.main-menu {
-  background-color: #f9f9f9;
-  flex-grow: 1;
-  max-width: 20%;
-  padding-bottom: 100%;
-  display: flex;
-  flex-flow: column nowrap;
-  min-width: 290px;
-
-}
-
 .main-content {
-  flex-grow: 3;
-  height: 100%;
-}
-
-.menu-item {
-  padding: 20px 6px;
-  text-align: center;
-}
-.menu-item:hover {
-  background-color: #f0f0f0;
-}
-.active, .active:hover {
-  background-color: #e3e3e3;
+  margin: 15px;
 }

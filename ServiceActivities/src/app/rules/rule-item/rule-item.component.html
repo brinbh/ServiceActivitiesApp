@@ -1,7 +1,7 @@
-<div class="contact">
-  <a [routerLink]="rule.id" >
-    <div>
-      <p *ngIf="rule" class="list-item rule">{{rule.title}}</p>
+<div class="rule">
+  <a class="menu-link" [routerLink]="rule.id" >
+    <div class="menu-button yellow"
+         *ngIf="rule">{{rule.title}}
     </div>
   </a>
 </div>

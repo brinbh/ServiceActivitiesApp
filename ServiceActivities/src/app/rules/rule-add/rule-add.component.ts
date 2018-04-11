@@ -19,7 +19,6 @@ export class RuleAddComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit(form: NgForm) {
-    debugger
     const value = form.value;
     const id = this.rulesService.getMaxId();
     const newRule = new Rule(value.title, value.content, id);
@@ -27,10 +26,10 @@ export class RuleAddComponent implements OnInit {
       .subscribe(
         (res) => console.log(res),
         (err) => console.log(err));
-    this.router.navigate(['/rules'], {relativeTo: this.route});
+    this.router.navigate(['/rules/list'], {relativeTo: this.route});
     this.rulesService.initRules();
   }
   onCancel() {
-    this.router.navigate(['/rules'], {relativeTo: this.route});
+    this.router.navigate(['/rules/list'], {relativeTo: this.route});
   }
 }

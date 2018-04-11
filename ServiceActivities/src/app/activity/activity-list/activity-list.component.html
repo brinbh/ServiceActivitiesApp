@@ -1,3 +1,5 @@
-<p>
-  activity-list works!
-</p>
+<app-activity-item
+  *ngFor="let activityEl of activities; let i = index"
+  [activity]="activityEl"
+  [index]="i">
+</app-activity-item>
