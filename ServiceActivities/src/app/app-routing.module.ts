@@ -17,12 +17,14 @@ import {AppComponent} from './app.component';
 import {ContactListComponent} from './contacts/contact-list/contact-list.component';
 import {ActivityMenuComponent} from './activity/activity-menu/activity-menu.component';
 import {RuleListComponent} from './rules/rule-list/rule-list.component';
+import {AccountInfoComponent} from './account/account-info/account-info.component';
 
 
 const appRoutes: Routes = [
-  { path: '', component: StartComponent},
-  { path: 'account', component: AccountComponent, children: [
-      { path: ':activityId', component: ActivityMenuComponent}
+  { path: '', pathMatch: 'full', component: StartComponent},
+  { path: 'account', component: AccountInfoComponent},
+  { path: 'activity', component: ActivityComponent, children: [
+      { path: ':id', component: ActivityMenuComponent }
     ]},
   { path: 'contacts', component: ContactsComponent, children: [
     { path: 'list', component: ContactListComponent},
