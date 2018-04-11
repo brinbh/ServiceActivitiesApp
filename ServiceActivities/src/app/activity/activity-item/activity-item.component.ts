@@ -20,7 +20,6 @@ export class ActivityItemComponent implements OnInit {
   goToActivity(id) {
     this.appService.currentActivity.next(this.activity);
     this.router.navigate([id], {relativeTo: this.route});
-    debugger
   }
 
 }
